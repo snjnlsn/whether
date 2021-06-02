@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Sunglasses",
+    "waterproof": false,
+    "min_temp": 75,
+    "max_temp": 100,
+    "max_wind": 40,
+    "min_wind": 0
+  },
+  {
+    "name": "Rain Jacket",
+    "waterproof": true,
+    "min_temp": 62,
+    "max_temp": 80,
+    "max_wind": 40,
+    "min_wind": 0
+  },
+  {
+    "name": "Sweater",
+    "waterproof": false,
+    "min_temp": 50,
+    "max_temp": 68,
+    "max_wind": 40,
+    "min_wind": 0
+  },
+  {
+    "name": "Light Coat",
+    "waterproof": true,
+    "min_temp": 35,
+    "max_temp": 55,
+    "max_wind": 50,
+    "min_wind": 0
+  },
+  {
+    "name": "Comfortable Shoes",
+    "waterproof": false,
+    "min_temp": 25,
+    "max_temp": 90,
+    "max_wind": 100,
+    "min_wind": 0
+  },
+  {
+    "name": "Heavy Coat",
+    "waterproof": true,
+    "min_temp": 0,
+    "max_temp": 40,
+    "max_wind": 100,
+    "min_wind": 0
+  },
+  {
+    "name": "Windbreaker",
+    "waterproof": false,
+    "min_temp": 50,
+    "max_temp": 80,
+    "max_wind": 100,
+    "min_wind": 0
+  },
+  {
+    "name": "Snow Boots",
+    "waterproof": true,
+    "min_temp": 0,
+    "max_temp": 35,
+    "max_wind": 100,
+    "min_wind": 0
+  }
+]
