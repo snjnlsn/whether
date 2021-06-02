@@ -1,9 +1,10 @@
 defmodule Whether.API do
   require IEx
 
+  @api_key Application.fetch_env!(:whether, :api_key)
+
   def call_api(city, _state) do
-    url =
-      "api.openweathermap.org/data/2.5/weather?q=#{city}&units=imperial&appid=55c4b244d01b4ee076507b61f6e84660"
+    url = "api.openweathermap.org/data/2.5/weather?q=#{city}&units=imperial&appid=#{@api_key}"
 
     with {:ok, %{body: body}} <- HTTPoison.get(url),
          {:ok, data} <- Jason.decode(body) do
