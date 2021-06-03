@@ -1,21 +1,19 @@
 # Whether
 
-**TODO: Add description**
+CLI Escript app that returns a list of reccomended items to bring given the current weather.
 
-## Installation
+## Setup
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `whether` to your list of dependencies in `mix.exs`:
+- Create a config/secret.exs and add your OpenWeather API token like so:
 
-```elixir
-def deps do
-  [
-    {:whether, "~> 0.1.0"}
-  ]
-end
+```
+import Config
+
+config :whether,
+  api_key: YOUR_KEY_HERE
+
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/whether](https://hexdocs.pm/whether).
-
+- If desired, add/edit list items in `config/items.json`.
+- If source code is edited, app can be recompiled by running `mix escript.build`
+- To get reccomendations, run `./whether --state=YOUR_STATE --city=YOUR_CITY` from root directory of repo
