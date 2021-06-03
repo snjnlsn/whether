@@ -27,3 +27,10 @@ config :whether,
 #### Stumbling Blocks:
 - Implmenting the new Config module, and environment-specific configuration. This has previously come for free in older Mix projects/Phoenix projects, so I had to learn how to add it as this was built in Elixir 1.12 / OTP 24.
 - Finding a way to build the app – I stumbled around some confusion with compilation and module importing in .exs files before landing on an EScript implementation that I'm happy with.
+
+#### Future Enhancements
+- Handling edge cases:
+  - Unknown cities are weakly guarded only by asking if the user typo'd
+  - 0 items returning given the current weather should emit a special message
+  - I don't handle the user passing args incorrectly into the CLI
+- More tests would be cool
