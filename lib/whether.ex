@@ -6,7 +6,7 @@ defmodule Whether do
   """
 
   @doc """
-    Returns reccomendations
+    Returns reccomendations based off city / state passed
   """
   @spec get_reccomendations(any, any) ::
           list
@@ -30,11 +30,8 @@ defmodule Whether do
                optional(:status_code) => integer
              }}
   def get_reccomendations(city, state \\ "ohio") do
-    with {:ok, resp} <- API.call_api(city, state),
-         {:ok, items} <- Items.get_pertinent_items(resp) do
-      items
-    else
-      err -> err
+    with {:ok, resp} <- API.call_api(String.downcase(city), String.downcase(state)) do
+      Items.get_pertinent_items(resp)
     end
   end
 end

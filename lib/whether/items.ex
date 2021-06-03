@@ -3,6 +3,8 @@ defmodule Whether.Items do
   require IEx
   import Ecto.Changeset
 
+  @reccomendations_data Application.get_env(:whether, :reccomendations_data, "config/items.json")
+
   schema "item" do
     field(:name, :string)
     field(:waterproof, :boolean)
@@ -13,9 +15,7 @@ defmodule Whether.Items do
   end
 
   def get_pertinent_items(weather) do
-    IEx.pry()
-
-    with {:ok, raw} <- File.read("config/items.json"),
+    with {:ok, raw} <- File.read(@reccomendations_data),
          {:ok, json} <- Jason.decode(raw) do
       items =
         json
@@ -23,8 +23,10 @@ defmodule Whether.Items do
           changeset(%__MODULE__{}, sug, weather)
         end)
         |> Enum.filter(fn item -> item.valid? end)
+        |> Enum.map(fn changeset -> changeset.changes.name end)
+        |> Enum.join(", ")
 
-      {:ok, items}
+      {:ok, "Bring #{items}"}
     else
       err -> err
     end
@@ -47,7 +49,6 @@ defmodule Whether.Items do
   end
 
   defp validate_temperature(changeset, weather) do
-    IEx.pry()
     min = get_field(changeset, :min_temp)
     max = get_field(changeset, :max_temp)
 
