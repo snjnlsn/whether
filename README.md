@@ -24,7 +24,6 @@ config :whether,
 - Use of TDD, especially practicing configuration/mocking the OpenWeather API
 - Implementation design, especially use of Ecto changesets to import and filter items based off current weather.
 
-#### Stumbling Blocks/Things I had to learn:
+#### Stumbling Blocks:
 - Implmenting the new Config module, and environment-specific configuration. This has previously come for free in older Mix projects/Phoenix projects, so I had to learn how to add it as this was built in Elixir 1.12 / OTP 24.
 - Finding a way to build the app – I stumbled around some confusion with compilation and module importing in .exs files before landing on an EScript implementation that I'm happy with.
-- 
